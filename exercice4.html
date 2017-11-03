@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="jquery-3.2.1.js"></script>
+  <title>Exercice 1</title>
+</head>
+<body>
+  <form>
+
+    <div id="myRectangle" style="border:1px solid black; height:10px; width:500px;"> </div>
+    <button type="button" name="button" id="moreHeight">augmenter la hauteur</button>
+    <button type="button" name="button" id="greenRectangle">Rectangle vert</button>
+    <button type="button" name="button" id="originColor">Couleur d origine</button>
+    <button type="button" name="button" id="hideRectangle">Cacher le rectangle</button>
+    <button type="button" name="button" id="showRectangle">Afficher le rectangle</button>
+  </form>
+  <script>
+  //augmente la taille du rectangle par palier de 10px jusqu'à 100px puis retrouve une taille de 10px
+  var heightRectangle=10;
+  $('#moreHeight').click(function(){
+    if(heightRectangle + 10 > 100){
+      heightRectangle=10;
+      $('#myRectangle').css('height',heightRectangle + 'px');
+    }else{
+      heightRectangle+=10;
+      $('#myRectangle').css('height',heightRectangle + 'px');
+      }
+      console.log(heightRectangle);
+  })
+  //mettre les bordures du rectangle en vert
+  $('#greenRectangle').click(function(){
+    $('#myRectangle').css('border','1px solid green');
+  })
+  //remettre les bordures d'origine
+  $('#originColor').click(function(){
+    console.log('bordure d origine');
+    $('#myRectangle').css('border','1px solid black');
+  })
+  //cacher le rectangle
+  $('#hideRectangle').click(function(){
+    $('#myRectangle').hide();
+  })
+  //afficher le rectangle
+  $('#showRectangle').click(function(){
+    $('#myRectangle').show();
+  })
+  </script>
+</body>
+</html>
